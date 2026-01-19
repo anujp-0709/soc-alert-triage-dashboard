@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alert Detail</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+   <div class="container">
+
+    <div class="nav">
+      <a href="/ingest/upload/">Upload</a>
+      <a href="/detections/run/">Detections</a>
+      <a href="/alerts/">Alerts</a>
+      <a href="/api/docs">API Docs</a>
+    </div> 
+  <h1>Alert Detail</h1>
+  <h3>MITRE ATT&CK</h3>
+  <p>
+  <a href="/alerts/{{ alert.id }}/pdf/">📄 Export Incident Report (PDF)</a>
+</p>
+
+  <p><b>Tactic:</b> {{ alert.mitre_tactic }}</p>
+  <p><b>Technique:</b> {{ alert.mitre_technique_id }} - {{ alert.mitre_technique_name }}</p>
+
+
+  <p><b>ID:</b> {{ alert.id }}</p>
+  <p><b>Rule:</b> {{ alert.rule_name }}</p>
+  <p><b>Severity:</b> {{ alert.severity }}</p>
+  <p><b>Entity:</b> {{ alert.entity_type }}: {{ alert.entity_value }}</p>
+  <p><b>Reason:</b> {{ alert.reason }}</p>
+  <p><b>Window:</b> {{ alert.window_start }} → {{ alert.window_end }}</p>
+  <p><b>Created:</b> {{ alert.created_at }}</p>
+
+  <p><a href="/alerts/">← Back to Alerts</a></p>
+</body>
+</html>

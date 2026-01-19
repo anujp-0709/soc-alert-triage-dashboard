@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload Auth Logs</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <div class="container">
+
+    <div class="nav">
+      <a href="/ingest/upload/">Upload</a>
+      <a href="/detections/run/">Detections</a>
+      <a href="/alerts/">Alerts</a>
+      <a href="/api/docs">API Docs</a>
+    </div>
+  <h1>Upload Auth Log CSV</h1>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="logfile" accept=".csv" required />
+    <button type="submit">Upload</button>
+  </form>
+
+  {% if message %}
+    <p><strong>{{ message }}</strong></p>
+  {% endif %}
+</body>
+</html>

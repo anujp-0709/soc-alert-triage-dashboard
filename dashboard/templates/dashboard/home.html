@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SOC Alert Triage Dashboard</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <a href="/ingest/upload/">Upload</a>
+      <a href="/detections/run/">Detections</a>
+      <a href="/alerts/">Alerts</a>
+      <a href="/api/docs">API Docs</a>
+    </div>
+    
+  <h1>SOC Alert Triage Dashboard</h1>
+  <p>A mini SOC tool to ingest auth logs, detect threats, triage alerts, export PDFs, and serve an API.</p>
+
+  <ul>
+    <li><a href="/ingest/upload/">📤 Upload Auth Logs</a></li>
+    <li><a href="/detections/run/">🛡️ Run Detections</a></li>
+    <li><a href="/alerts/">🚨 View Alerts</a></li>
+    <li><a href="/api/docs">🧩 API Docs</a></li>
+  </ul>
+</body>
+</html>

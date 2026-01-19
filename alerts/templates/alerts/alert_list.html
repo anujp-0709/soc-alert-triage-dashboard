@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alerts</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+   <div class="container">
+
+    <div class="nav">
+      <a href="/ingest/upload/">Upload</a>
+      <a href="/detections/run/">Detections</a>
+      <a href="/alerts/">Alerts</a>
+      <a href="/api/docs">API Docs</a>
+    </div> 
+  <h1>SOC Alerts</h1>
+
+  {% if alerts %}
+    <table border="1" cellpadding="8">
+      <tr>
+        <th>ID</th>
+        <th>Rule</th>
+        <th>Severity</th>
+        <th>Entity</th>
+        <th>Reason</th>
+        <th>Created</th>
+      </tr>
+
+      {% for alert in alerts %}
+      <tr>
+        <td><a href="/alerts/{{ alert.id }}/">{{ alert.id }}</a></td>
+
+        <td>{{ alert.rule_name }}</td>
+        <td>{{ alert.severity }}</td>
+        <td>{{ alert.entity_type }}: {{ alert.entity_value }}</td>
+        <td>{{ alert.reason }}</td>
+        <td>{{ alert.created_at }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>No alerts found. Run detections first.</p>
+  {% endif %}
+</body>
+</html>

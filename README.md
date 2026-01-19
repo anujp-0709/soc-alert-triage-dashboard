@@ -12,13 +12,15 @@ A mini SOC-style tool that ingests authentication logs, detects suspicious activ
 
 ## Screenshots
 Add screenshots here:
-- Home
+### Home
+![Home](assets/home.png)
 - Upload page
 - Run detections
 - Alerts list
 - Alert detail (MITRE)
 - PDF export
-- API docs
+### API Docs
+![API Docs](assets/api_docs.png)
 
 ## How to Run (Local)
 ```bash

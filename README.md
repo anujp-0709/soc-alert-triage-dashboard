@@ -45,6 +45,7 @@ A mini SOC-style web application that ingests authentication logs, detects suspi
 
 ---
 
+```md
 ## ▶️ Run Locally
 
 ### 1) Create virtual environment
@@ -78,23 +79,5 @@ Open:
 Home: http://127.0.0.1:8000/
 
 API Docs: http://127.0.0.1:8000/api/docs
-
-📌 API Endpoints
-GET /api/alerts
-
-GET /api/alerts/{alert_id}
-
-Example filters:
-
-/api/alerts?severity=80
-
-/api/alerts?entity_type=IP
-
-/api/alerts?job_id=3
-
-📍 Roadmap (Next Improvements)
-Add more detection rules: password spray, credential stuffing, success-after-fail
-
-Add alert deduplication + severity banding
 
 Add analytics dashboard (top IPs/users, trends over time)
